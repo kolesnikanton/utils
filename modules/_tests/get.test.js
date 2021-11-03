@@ -13,7 +13,7 @@ const mock = {
   objWithFalse: { test: false },
 };
 
-test('should return an obj key value', () => {
+it('should return an obj key value', () => {
   expect(get(mock.objectWithValue, 'test', mock.defaultValue)).toBe(mock.objectWithValue.test);
   expect(get(mock.objWithUndefined, 'test', mock.defaultValue)).toBe(mock.objWithUndefined.test);
   expect(get(mock.objWithNull, 'test', mock.defaultValue)).toBe(mock.objWithNull.test);
@@ -24,7 +24,7 @@ test('should return an obj key value', () => {
   expect(get(mock.objWithFalse, 'test', mock.defaultValue)).toBe(mock.objWithFalse.test);
 });
 
-test('should return a default value', () => {
+it('should return a default value', () => {
   expect(get(mock.emptyObject, 'test', mock.defaultValue)).toBe(mock.defaultValue);
   expect(get(mock.objectWithValue, 'incorrectKey', mock.defaultValue)).toBe(mock.defaultValue);
 });

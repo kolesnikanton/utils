@@ -17,7 +17,7 @@ const mock = {
   string: 'test',
 };
 
-test(`should return ${VALUE_TYPES.array}`, () => {
+it(`should return ${VALUE_TYPES.array}`, () => {
   expect(getValueType(mock.emptyArr)).toBe(VALUE_TYPES.array);
   expect(getValueType(mock.arr)).toBe(VALUE_TYPES.array);
 
@@ -34,7 +34,7 @@ test(`should return ${VALUE_TYPES.array}`, () => {
   expect(getValueType(mock.string)).not.toBe(VALUE_TYPES.array);
 });
 
-test(`should return ${VALUE_TYPES.null}`, () => {
+it(`should return ${VALUE_TYPES.null}`, () => {
   expect(getValueType(mock.null)).toBe(VALUE_TYPES.null);
 
   expect(getValueType(mock.emptyArr)).not.toBe(VALUE_TYPES.null);
@@ -51,7 +51,7 @@ test(`should return ${VALUE_TYPES.null}`, () => {
   expect(getValueType(mock.string)).not.toBe(VALUE_TYPES.null);
 });
 
-test(`should return ${VALUE_TYPES.object}`, () => {
+it(`should return ${VALUE_TYPES.object}`, () => {
   expect(getValueType(mock.emptyObject)).toBe(VALUE_TYPES.object);
   expect(getValueType(mock.object)).toBe(VALUE_TYPES.object);
 

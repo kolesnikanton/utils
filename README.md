@@ -22,3 +22,11 @@ getValueType(value)
 ```
   * Return 'array' instead 'object' when a value is an array
   * Return 'null' instead 'object' when a value is null
+
+## isInt
+```shell
+isInt(value)
+```
+  * Return true when a value is a integer
+  * Works only with a number type
+  * *.0 is also true
