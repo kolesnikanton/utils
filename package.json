@@ -15,6 +15,7 @@
   },
   "scripts": {
     "babel": "npx babel modules --out-dir lib --ignore 'modules/_tests_'",
+    "prepare": "npm run babel",
     "test": "jest"
   },
   "devDependencies": {
