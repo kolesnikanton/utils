@@ -82,7 +82,7 @@ function rCalculation(arr1, arr2, operator, arr1Depth = 0, arr2Depth = 0) {
   // [[n...n], [n...n]] && [[n], [n]]
   function case6(a, b, aShape, bShape) {
     if (aShape.col > 0 && bShape.col === 1 && aShape.row === bShape.row) {
-      res = a.map((_, i) => a[i].map(el => operator(el, b[i][0])));
+      res = a.map((_, i) => a[i].map(el => operator(b[i][0], el)));
     }
   }
 

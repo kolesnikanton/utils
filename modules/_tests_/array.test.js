@@ -110,6 +110,9 @@ it('operators: should return correct values', () => {
   expect(minus([2], [1])).toEqual([1]);
   expect(minus([0], [5])).toEqual([-5]);
   expect(minus([-4.0], [-0.55])).toEqual([-3.45]);
+  expect(minus([[1], [0], [1], [1]], [[0.5], [0.5], [0.5], [0.5]])).toEqual(
+    [[0.5], [-0.5], [0.5], [0.5]],
+  );
 
   expect(multiply([5], [5])).toEqual([25]);
   expect(multiply([54.4], [-5.425])).toEqual([-295.12]);
