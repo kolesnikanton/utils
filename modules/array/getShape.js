@@ -7,29 +7,28 @@ export default function getShape(arr) {
 
   for (let i = 0; i < arr.length; i++) {
     if (isArray(arr[i])) {
-      is1DArr = false;
-      const element = arr[i];
-
       if (is1DArr) {
-        throw new Error(`Wrong element depth [${element}]`);
+        throw new Error('Wrong depth');
       }
 
-      row += 1;
+      const element = arr[i];
 
       if (i && col !== element.length) {
-        throw new Error(`Wrong column. Previous: ${col}. Current: ${element.length}`);
+        throw new Error('Wrong column');
       }
 
       for (let j = 0; j < element.length; j++) {
         if (isArray(element[j])) {
-          throw new Error(`Wrong depth. [${element[j]}]`);
+          throw new Error('Wrong depth');
         }
       }
 
+      is1DArr = false;
       col = element.length;
+      row += 1;
     } else {
       if (is1DArr === false) {
-        throw new Error(`Wrong depth. ${arr[i]}`);
+        throw new Error('Wrong depth');
       }
 
       is1DArr = true;

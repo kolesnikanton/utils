@@ -7,7 +7,6 @@ function getDotProduct(a, b) {
   return res.reduce((prev, curr) => prev + curr);
 }
 
-// TODO: Optimize - without result
 export default function dot(a, b) {
   if (!isArray(a) && !isArray(b)) {
     throw new Error('Wrong. It`s not an array');
@@ -16,47 +15,47 @@ export default function dot(a, b) {
   const aShape = isArray(a) ? getShape(a) : {};
   const bShape = isArray(b) ? getShape(b) : {};
 
-  let result;
-
   // Case 1: Scalar Multiplication
   // If either a or b is 0-D
-  function case1(c, d, dShape) {
-    if (!isArray(c)) {
-      // n & [n, n]
-      if (dShape.col === 0) {
-        result = d.map(el => el * c);
-      }
 
-      // n & [[n, n], [n, n]]
-      if (dShape.col > 0) {
-        result = d.map(dRow => dRow.map(el => el * c));
-      }
-    }
+  // n & [n, n]
+  if (!isArray(a) && bShape.col === 0) {
+    return b.map(el => a * el);
   }
 
-  case1(a, b, bShape);
-  case1(b, a, aShape);
+  // [n, n] & n
+  if (!isArray(b) && aShape.col === 0) {
+    return a.map(el => el * b);
+  }
+
+  // n & [[n, n], [n, n]]
+  if (!isArray(a) && bShape.col > 0) {
+    return b.map(bRow => bRow.map(el => a * el));
+  }
+
+  // [[n, n], [n, n]] * n
+  if (!isArray(b) && aShape.col > 0) {
+    return a.map(aRow => aRow.map(el => el * b));
+  }
 
   // Case 2: Inner product of vectors
   // If both a and b are 1-D arrays
+
   // [n, n] & [n, n]
   if (aShape.col === 0 && bShape.col === 0 && aShape.row === bShape.row) {
-    result = getDotProduct(a, b);
+    return getDotProduct(a, b);
   }
 
   // Case 3: Matrix multiplication
   // If both a and b are 2-D arrays
-  // [[n, n], [n, n]] & [[n, n], [n, n]]
+
   const isCorrect2DShapes = aShape.col === bShape.row || aShape.row === bShape.col;
 
+  // [[n, n], [n, n]] & [[n, n], [n, n]]
   if (isCorrect2DShapes && aShape.col > 0 && bShape.col > 0) {
     const transposedB = transpose(b);
-    result = a.map(aR => transposedB.map(bR => getDotProduct(aR, bR)));
+    return a.map(aR => transposedB.map(bR => getDotProduct(aR, bR)));
   }
 
-  if (!result) {
-    throw new Error('Wrong. Unexpected case');
-  }
-
-  return result;
+  throw new Error('Wrong. Unexpected case');
 }
