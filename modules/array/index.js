@@ -1,6 +1,7 @@
 import transpose from './transpose';
 import getShape from './getShape';
 import dot from './dot';
+import exp from './exp';
 import { isNestedArray, wrapArr, isArray } from './utils';
 
 export const OPERATORS = {
@@ -137,4 +138,5 @@ export default {
   getShape,
   transpose,
   dot,
+  exp,
 };
