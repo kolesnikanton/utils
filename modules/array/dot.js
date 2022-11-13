@@ -7,6 +7,7 @@ function getDotProduct(a, b) {
   return res.reduce((prev, curr) => prev + curr);
 }
 
+// TODO: Optimize - without result
 export default function dot(a, b) {
   if (!isArray(a) && !isArray(b)) {
     throw new Error('Wrong. It`s not an array');

@@ -118,8 +118,9 @@ it('operators: should return correct values', () => {
   expect(divide([10], [2])).toEqual([5]);
   expect(divide([15], [2.54])).toEqual([5.905511811023622]);
   expect(divide([[124.234], [32.424]], [2442.54])).toEqual(
-    [[0.05086262661000434], [0.01327470583900366]],
+    [[19.66080139092358], [75.33123612139156]],
   );
+  expect(divide([1], [[2], [2]])).toEqual([[0.5], [0.5]]);
 });
 
 it('transpose: should return correct values', () => {

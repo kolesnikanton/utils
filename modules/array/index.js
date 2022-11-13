@@ -60,7 +60,7 @@ function rCalculation(arr1, arr2, operator, arr1Depth = 0, arr2Depth = 0) {
   // [n, n, n] & [[n], [n]]
   function case4(a, b, aShape, bShape) {
     if (aShape.col === 0 && aShape.row > 1 && bShape.col === 1) {
-      res = b.map((_, i) => a.map(el => operator(el, b[i][0])));
+      res = b.map((_, i) => a.map(el => operator(b[i][0], el)));
       decreaseMaxDepth();
     }
   }
@@ -71,7 +71,7 @@ function rCalculation(arr1, arr2, operator, arr1Depth = 0, arr2Depth = 0) {
   // [n] & [[n...n], [n...n]]
   function case5(a, b, aShape, bShape) {
     if (aShape.col === 0 && aShape.row === 1 && bShape.col > 0) {
-      res = b.map((_, i) => b[i].map(el => operator(el, a[0])));
+      res = b.map((_, i) => b[i].map(el => operator(a[0], el)));
       decreaseMaxDepth();
     }
   }
