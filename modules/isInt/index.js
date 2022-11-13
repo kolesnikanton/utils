@@ -1,5 +1,5 @@
-import { VALUE_TYPES } from './_constants';
-import getValueType from './getValueType';
+import { VALUE_TYPES } from '../_constants';
+import getValueType from '../getValueType';
 
 const isInt = number => {
   if (getValueType(number) === VALUE_TYPES.number) {

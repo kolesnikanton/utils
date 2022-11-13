@@ -1,5 +1,5 @@
-import { VALUE_TYPES } from './_constants';
-import getValueType from './getValueType';
+import { VALUE_TYPES } from '../_constants';
+import getValueType from '../getValueType';
 
 const isEmptyNumber = number => Number.isNaN(number);
 const isEmptyString = string => !string;

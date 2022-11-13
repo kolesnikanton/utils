@@ -1,19 +1,40 @@
 {
-  "name": "utils",
-  "version": "1.0.0",
-  "main": "modules/index.js",
-  "private": true,
+  "name": "@antonkolesnik/utils",
+  "author": "Anton Kolesnik <kolesnikanton@icloud.com>",
+  "description": "utils",
+  "version": "1.0.0-beta.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/kolesnikanton/utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kolesnikanton/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/kolesnikanton/utils/issues"
+  },
   "scripts": {
-    "babel": "npx babel modules --out-dir lib",
+    "babel": "npx babel modules --out-dir lib --ignore 'modules/_tests_'",
     "test": "jest"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
     "eslint": "^7.19.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
-    "jest": "^26.6.3"
-  }
+    "jest": "^29.2.2"
+  },
+  "keywords": [
+    "utils",
+    "array",
+    "sum",
+    "divide",
+    "multiply",
+    "minus",
+    "operators",
+    "math",
+    "check"
+  ]
 }

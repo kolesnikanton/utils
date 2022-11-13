@@ -12,8 +12,13 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
+    // Off
     'no-console': 'off',
     'import/prefer-default-export': 'off',
+    'valid-typeof': 'off',
+    'no-plusplus': 'off',
+
+    // Error
     'arrow-parens': ['error', 'as-needed'],
   },
 };
