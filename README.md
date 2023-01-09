@@ -3,11 +3,11 @@ Lightweight javascript utilities
 
 ## Installation
 
-#### Install with Yarn
+#### Install with NPM
 ```
 npm install @antonkolesnik/utils
 ```
-#### Install with NPM
+#### Install with Yarn
 ```
 yarn add @antonkolesnik/utils
 ```
