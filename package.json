@@ -36,6 +36,7 @@
     "minus",
     "operators",
     "math",
-    "check"
+    "check",
+    "utilities"
   ]
 }

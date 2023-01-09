@@ -1,6 +1,19 @@
-# utils
+# Utils
+Lightweight javascript utilities
+
+## Installation
+
+#### Install with Yarn
+```
+npm install @antonkolesnik/utils
+```
+#### Install with NPM
+```
+yarn add @antonkolesnik/utils
+```
 
 ## Array
+Array operations
 ```js
 import { array } from '@antonkolesnik/utils';
 ```
