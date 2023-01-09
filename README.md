@@ -30,7 +30,7 @@ array.multiply([[2], [2]], [2]); // [[4], [4]]
 
 * Divide array elements
 ```js
-array.multiply([[2], [2]], [2]); // [[4], [4]]
+array.divide([[2], [2]], [2]); // [[4], [4]]
 ```
 
 * Minus array elements
