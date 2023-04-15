@@ -1,8 +1,8 @@
 {
   "name": "@antonkolesnik/utils",
   "author": "Anton Kolesnik <kolesnikanton@icloud.com>",
-  "description": "utils",
-  "version": "1.0.0-beta.2",
+  "description": "Lightweight javascript utilities",
+  "version": "1.0.0-beta.2-1",
   "license": "MIT",
   "main": "lib/index.js",
   "homepage": "https://github.com/kolesnikanton/utils",
@@ -30,6 +30,7 @@
   "keywords": [
     "utils",
     "array",
+    "multidimensional",
     "sum",
     "divide",
     "multiply",

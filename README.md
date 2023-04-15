@@ -1,5 +1,5 @@
 # Utils
-Lightweight javascript utilities
+Lightweight javascript library that provides mathematical operations on multidimensional arrays and more
 
 ## Installation
 
@@ -13,7 +13,6 @@ yarn add @antonkolesnik/utils
 ```
 
 ## Array
-Array operations
 ```js
 import { array } from '@antonkolesnik/utils';
 ```
