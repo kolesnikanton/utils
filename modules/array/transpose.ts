@@ -1,7 +1,8 @@
 import getShape from './getShape';
 import { isArray } from './utils';
+import { ArrayT } from '../types';
 
-export default function transpose(arr) {
+export default function transpose(arr: ArrayT): ArrayT {
   if (!isArray(arr)) {
     throw new Error('Wrong. It`s not an array');
   }
@@ -12,13 +13,13 @@ export default function transpose(arr) {
     return arr;
   }
 
-  const result = [];
+  const result: number[][] = [];
 
   for (let i = 0; i < shape.col; i++) {
     result[i] = [];
 
     for (let j = 0; j < shape.row; j++) {
-      result[i][j] = arr[j][i];
+      result[i][j] = (arr as number[][])[j][i];
     }
   }
 

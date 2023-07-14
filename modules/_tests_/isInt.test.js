@@ -13,6 +13,7 @@ const mock = {
   class: class Test {},
   bigInt: BigInt(123),
   int: 123,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   function: () => {},
   sybmol: Symbol('123'),
   arr: ['123'],

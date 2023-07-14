@@ -1,6 +1,7 @@
 import { isArray } from './utils';
+import { ArrayT } from '../types';
 
-export default function getShape(arr) {
+export default function getShape(arr: ArrayT): { row: number, col: number } {
   let is1DArr = null;
   let row = 0;
   let col = 0;
@@ -11,7 +12,7 @@ export default function getShape(arr) {
         throw new Error('Wrong depth');
       }
 
-      const element = arr[i];
+      const element = arr[i] as number[];
 
       if (i && col !== element.length) {
         throw new Error('Wrong column');

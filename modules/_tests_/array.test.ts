@@ -24,6 +24,7 @@ it('calc (unusual cases): should return correct values', () => {
   expect(sum([], [])).toEqual([]);
   expect(sum([1], [])).toEqual([]);
   expect(sum([], [1])).toEqual([]);
+  // @ts-expect-error Testing purposes
   expect(sum(['1'], [1])).toEqual(['11']);
 
   // Wrap
@@ -34,12 +35,17 @@ it('calc (unusual cases): should return correct values', () => {
 });
 
 it('calc: should return correct error messages', () => {
+  // @ts-expect-error Testing purposes
   expect(() => sum(1, 1)).toThrow('Wrong. It`s not an array');
+  // @ts-expect-error Testing purposes
   expect(() => sum(null, [1])).toThrow('Wrong. It`s not an array');
+  // @ts-expect-error Testing purposes
   expect(() => sum()).toThrow('Wrong. It`s not an array');
+  // @ts-expect-error Testing purposes
   expect(() => sum('[]', '[]')).toThrow('Wrong. It`s not an array');
 
   expect(() => sum([1, [2]], [[2], [[2]]])).toThrow('Wrong depth');
+  // @ts-expect-error Testing purposes
   expect(() => sum([0, [[1, 2]], [2]], [[2], [[2]]])).toThrow('Wrong depth');
 
   expect(() => sum(mock.D1.arr2, mock.D1.arr3)).toThrow('Wrong. Unexpected case');
@@ -149,7 +155,9 @@ it('transpose: should return correct values', () => {
   expect(transpose([[1, 2, 3], [3, 4, 5]])).toEqual([[1, 3], [2, 4], [3, 5]]);
 
   // Errors
+  // @ts-expect-error Testing purposes
   expect(() => transpose(1)).toThrow('Wrong. It`s not an array');
+  // @ts-expect-error Testing purposes
   expect(() => transpose([1, [1], [[1], [1]]])).toThrow('Wrong depth');
 });
 
@@ -162,6 +170,7 @@ it('exp: should return correct values', () => {
   );
 
   // Errors
+  // @ts-expect-error Testing purposes
   expect(() => exp(1)).toThrow('Wrong. It`s not an array');
 });
 
@@ -185,6 +194,7 @@ it('dot: should return correct values', () => {
   );
 
   // Errors;
+  // @ts-expect-error Testing purposes
   expect(() => dot()).toThrow('Wrong. It`s not an array');
   expect(() => dot([[[1, 2], [3, 4]]], [[5, 6], [7, 8]])).toThrow('Wrong depth');
   expect(() => dot([1], [[1, 2], [1, 2]])).toThrow('Wrong. Unexpected case');

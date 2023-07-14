@@ -1,12 +1,25 @@
 import { VALUE_TYPES } from '../_constants';
 import getValueType from '../getValueType';
 
-const isEmptyNumber = number => Number.isNaN(number);
-const isEmptyString = string => !string;
-const isEmptyArr = arr => !arr.length;
-const isEmptyObj = obj => JSON.stringify(obj) === JSON.stringify({});
+function isEmptyNumber(number: number) {
+  return Number.isNaN(number);
+}
 
-const isEmpty = value => {
+function isEmptyString(string: string) {
+  return !string;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isEmptyArr(arr: any[]) {
+  return !arr.length;
+}
+
+function isEmptyObj(obj: object) {
+  return JSON.stringify(obj) === JSON.stringify({});
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function isEmpty(value: any) {
   switch (getValueType(value)) {
     case VALUE_TYPES.boolean: {
       return false;
@@ -40,6 +53,6 @@ const isEmpty = value => {
       return false;
     }
   }
-};
+}
 
 export default isEmpty;

@@ -10,6 +10,7 @@ const mock = {
   null: null,
   class: class Test {},
   bigInt: BigInt(9007199254740991),
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   function: () => {},
   sybmol: Symbol('test'),
   arr: ['test'],
