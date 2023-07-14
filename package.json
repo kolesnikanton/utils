@@ -1,17 +1,54 @@
 {
-  "name": "utils",
-  "version": "1.0.0",
-  "main": "modules/index.js",
-  "private": true,
+  "name": "@antonkolesnik/utils",
+  "author": "Anton Kolesnik <kolesnikanton@icloud.com>",
+  "description": "Lightweight javascript utilities",
+  "version": "1.0.0-beta.3",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "homepage": "https://github.com/kolesnikanton/utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kolesnikanton/utils"
+  },
+  "bugs": {
+    "url": "https://github.com/kolesnikanton/utils/issues"
+  },
   "scripts": {
-    "babel": "npx babel modules --out-dir lib"
+    "build:types": "tsc --emitDeclarationOnly",
+    "build:files": "npx babel modules --out-dir lib --delete-dir-on-start --ignore 'modules/_tests_' --extensions .ts,.js",
+    "build": "npm run build:files && npm run build:types",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "lint": "eslint .",
+    "typecheck": "tsc --pretty --noEmit"
   },
   "devDependencies": {
-    "@babel/cli": "^7.12.13",
-    "@babel/core": "^7.12.13",
-    "@babel/preset-env": "^7.12.13",
-    "eslint": "^7.19.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-import": "^2.22.1"
-  }
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-typescript": "^7.21.5",
+    "@types/jest": "^29.5.1",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.31.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^27.2.1",
+    "jest": "^29.2.2",
+    "typescript": "^5.0.4"
+  },
+  "keywords": [
+    "utils",
+    "array",
+    "multidimensional",
+    "sum",
+    "divide",
+    "multiply",
+    "minus",
+    "operators",
+    "math",
+    "check",
+    "utilities"
+  ]
 }
