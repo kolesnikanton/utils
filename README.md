@@ -130,3 +130,12 @@ isInt(value)
   * Return true when a value is a integer
   * Works only with a number type
   * *.0 is also true
+
+### combineStrings
+---
+```js
+combineStrings('1', '  ', '2'); // '1 2'
+combineString([0 > 1, '1', '0']); // '0'
+combineString('1', [0 > 1, '1', '0'], '1'); // '1 0 1'
+```
+  * Works with conditions. Send an array, where arr[0] is a condition, arr[1] is true and arr[2] is false
